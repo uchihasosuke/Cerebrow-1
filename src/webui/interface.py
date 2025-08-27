@@ -160,8 +160,8 @@ def create_ui(theme_name="Glass"):
             with gr.TabItem("⚙️ Agent Settings"):
                 create_agent_settings_tab(ui_manager)
 
-            # with gr.TabItem("🌐 Browser Settings", visible=False):
-            #     create_browser_settings_tab(ui_manager)
+            with gr.TabItem("🌐 Browser Settings", visible=True):
+                create_browser_settings_tab(ui_manager)
 
             with gr.TabItem("🤖 Run Agent"):
                 create_browser_use_agent_tab(ui_manager)
