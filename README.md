@@ -58,6 +58,11 @@ Or you can install specific browsers by running:
 playwright install chromium --with-deps
 ```
 
+Or
+```bash
+python -m playwright install chromium
+```
+
 #### Step 4: Configure Environment
 1. Create a copy of the example environment file:
 - Windows (Command Prompt):
@@ -89,6 +94,4 @@ cp .env.example .env
          BROWSER_PATH="/Applications/Google Chrome.app/Contents/MacOS/Google Chrome"
          BROWSER_USER_DATA="/Users/YourUsername/Library/Application Support/Google/Chrome"
         ```
-    - Close all Chrome windows
-    - Open Cerebrow in a non-Chrome browser, such as Firefox or Edge. This is important because the persistent browser context will use the Chrome data when running the agent.
-    - Check the "Use Own Browser" option within the Browser Settings.
+   
