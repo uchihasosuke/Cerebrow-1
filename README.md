@@ -11,14 +11,14 @@
 
 ## Installation Guide
 
-### Option 1: Local Installation
+### Option 1: Local Installationcd cerebrow-1
 
 Follow the steps below to get started.
 
 #### Step 1: Clone the Repository
 ```bash
 git clone hhttps://github.com/uchihasosuke/Cerebrow-1.git
-cd cerebrow-1
+cd Cerebrow-1
 ```
 
 #### Step 2: Set Up Python Environment
