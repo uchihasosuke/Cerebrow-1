@@ -1,0 +1,236 @@
+# Python Libraries Used in Cerebrow Project
+
+## Core Dependencies (requirements.txt)
+
+### 1. browser-use==0.1.48
+**Purpose**: Core browser automation framework
+- **Usage**: Provides the foundation for browser automation, agent management, and web interaction
+- **Key Components Used**:
+  - `browser_use.agent.service.Agent` - Base agent class for browser automation
+  - `browser_use.browser.browser.Browser` - Browser management and control
+  - `browser_use.browser.context.BrowserContext` - Browser context management
+  - `browser_use.controller.service.Controller` - Action controller for browser operations
+  - `browser_use.agent.gif.create_history_gif` - Creates GIF recordings of agent actions
+  - `browser_use.utils.time_execution_async` - Performance timing utilities
+
+### 2. pyperclip==1.9.0
+**Purpose**: Cross-platform clipboard operations
+- **Usage**: Enables copying and pasting text between the application and system clipboard
+- **Location**: Used in `src/controller/custom_controller.py` for clipboard management
+
+### 3. gradio==5.27.0
+**Purpose**: Web-based user interface framework
+- **Usage**: Creates the main web UI for the application with multiple tabs and components
+- **Key Features Used**:
+  - Custom themes and styling
+  - Tab-based interface for different functionalities
+  - Form components for configuration
+  - Real-time updates and interactions
+- **Location**: `src/webui/interface.py` and all component files
+
+### 4. json-repair
+**Purpose**: JSON data repair and validation
+- **Usage**: Fixes malformed JSON data to ensure proper parsing
+- **Note**: Used for handling potentially corrupted JSON responses
+
+### 5. langchain-mistralai==0.2.4
+**Purpose**: Mistral AI integration with LangChain
+- **Usage**: Provides access to Mistral AI models through LangChain framework
+- **Location**: `src/utils/llm_provider.py` for Mistral AI model support
+
+### 6. MainContentExtractor==0.0.4
+**Purpose**: Web content extraction and processing
+- **Usage**: Extracts main content from web pages, removing ads and navigation elements
+- **Location**: `src/controller/custom_controller.py` for content extraction
+
+### 7. langchain-ibm==0.3.10
+**Purpose**: IBM Watson integration with LangChain
+- **Usage**: Provides access to IBM Watson models through LangChain framework
+- **Location**: `src/utils/llm_provider.py` for IBM Watson model support
+
+### 8. langchain_mcp_adapters==0.0.9
+**Purpose**: Model Context Protocol (MCP) integration with LangChain
+- **Usage**: Enables communication with external tools and services through MCP protocol
+- **Location**: `src/utils/mcp_client.py` for MCP client setup and tool management
+
+### 9. langgraph==0.3.34
+**Purpose**: Graph-based workflow orchestration
+- **Usage**: Creates complex agent workflows and state management for research tasks
+- **Key Features Used**:
+  - `StateGraph` for managing agent state transitions
+  - Workflow orchestration for deep research tasks
+- **Location**: `src/agent/deep_research/deep_research_agent.py`
+
+### 10. langchain-community
+**Purpose**: Community-contributed LangChain tools and integrations
+- **Usage**: Provides additional tools like file management operations
+- **Key Tools Used**:
+  - `ListDirectoryTool` - Directory listing operations
+  - `ReadFileTool` - File reading operations
+  - `WriteFileTool` - File writing operations
+- **Location**: `src/agent/deep_research/deep_research_agent.py`
+
+## Additional Dependencies (Imported but not in requirements.txt)
+
+### 11. openai
+**Purpose**: OpenAI API client
+- **Usage**: Direct integration with OpenAI models for custom implementations
+- **Location**: `src/utils/llm_provider.py` for DeepSeek R1 model support
+
+### 12. langchain_openai
+**Purpose**: OpenAI integration with LangChain
+- **Usage**: Provides ChatOpenAI and AzureChatOpenAI classes for OpenAI models
+- **Location**: `src/utils/llm_provider.py` for OpenAI and Azure OpenAI support
+
+### 13. langchain_core
+**Purpose**: Core LangChain functionality
+- **Usage**: Provides base classes and utilities for LangChain operations
+- **Key Components Used**:
+  - `BaseLanguageModel` - Base class for language models
+  - `BaseMessage`, `HumanMessage`, `AIMessage`, `SystemMessage` - Message types
+  - `ChatResult`, `LLMResult` - LLM response structures
+  - `Runnable`, `RunnableConfig` - Execution framework
+  - `BaseTool` - Tool interface
+- **Location**: `src/utils/llm_provider.py` and other files
+
+### 14. langchain_ollama
+**Purpose**: Ollama integration with LangChain
+- **Usage**: Provides access to local Ollama models through LangChain
+- **Location**: `src/utils/llm_provider.py` for Ollama model support
+
+### 15. langchain_anthropic
+**Purpose**: Anthropic Claude integration with LangChain
+- **Usage**: Provides access to Anthropic Claude models through LangChain
+- **Location**: `src/utils/llm_provider.py` for Anthropic model support
+
+### 16. langchain_google_genai
+**Purpose**: Google Gemini integration with LangChain
+- **Usage**: Provides access to Google Gemini models through LangChain
+- **Location**: `src/utils/llm_provider.py` for Google Gemini model support
+
+### 17. langchain_aws
+**Purpose**: AWS Bedrock integration with LangChain
+- **Usage**: Provides access to AWS Bedrock models through LangChain
+- **Location**: `src/utils/llm_provider.py` for AWS Bedrock model support
+
+### 18. pydantic
+**Purpose**: Data validation and settings management
+- **Usage**: Provides data models and validation for configuration and API responses
+- **Key Features Used**:
+  - `BaseModel` - Base class for data models
+  - `Field` - Field configuration and validation
+  - `SecretStr` - Secure string handling for API keys
+- **Location**: Multiple files including `src/utils/mcp_client.py`
+
+### 19. playwright
+**Purpose**: Browser automation and web testing
+- **Usage**: Provides low-level browser control and automation capabilities
+- **Key Components Used**:
+  - `async_playwright` - Async Playwright context manager
+  - `Browser`, `BrowserContext` - Browser management
+- **Location**: `src/browser/custom_browser.py` for browser setup
+
+### 20. python-dotenv
+**Purpose**: Environment variable management
+- **Usage**: Loads environment variables from .env files
+- **Location**: `webui.py` and `src/agent/browser_use/browser_use_agent.py`
+
+### 21. asyncio
+**Purpose**: Asynchronous programming support
+- **Usage**: Provides async/await functionality for concurrent operations
+- **Location**: Multiple files for async browser operations and agent management
+
+### 22. logging
+**Purpose**: Application logging and debugging
+- **Usage**: Provides structured logging throughout the application
+- **Location**: All major files for debugging and monitoring
+
+### 23. pathlib
+**Purpose**: Path manipulation and file system operations
+- **Usage**: Modern path handling for file operations
+- **Location**: `src/agent/deep_research/deep_research_agent.py`
+
+### 24. typing
+**Purpose**: Type hints and annotations
+- **Usage**: Provides type information for better code quality and IDE support
+- **Location**: Multiple files for type annotations
+
+### 25. functools
+**Purpose**: Higher-order functions and operations on callable objects
+- **Usage**: Provides utilities like `partial` for function manipulation
+- **Location**: `src/agent/deep_research/deep_research_agent.py`
+
+### 26. threading
+**Purpose**: Thread-based parallelism
+- **Usage**: Provides threading support for concurrent operations
+- **Location**: `src/agent/deep_research/deep_research_agent.py`
+
+### 27. uuid
+**Purpose**: Unique identifier generation
+- **Usage**: Generates unique IDs for tasks and sessions
+- **Location**: `src/agent/deep_research/deep_research_agent.py`
+
+### 28. socket
+**Purpose**: Network socket operations
+- **Usage**: Checks port availability for browser debugging
+- **Location**: `src/browser/custom_browser.py`
+
+### 29. inspect
+**Purpose**: Introspection utilities
+- **Usage**: Provides information about live objects for debugging
+- **Location**: `src/controller/custom_controller.py`
+
+### 30. argparse
+**Purpose**: Command-line argument parsing
+- **Usage**: Parses command-line arguments for the web UI
+- **Location**: `webui.py`
+
+## Standard Library Dependencies
+
+### 31. os
+**Purpose**: Operating system interface
+- **Usage**: Environment variable access, file path operations, system calls
+
+### 32. json
+**Purpose**: JSON data processing
+- **Usage**: Configuration file handling, API response parsing
+
+### 33. sys
+**Purpose**: System-specific parameters and functions
+- **Usage**: System path manipulation, exit codes
+
+### 34. traceback
+**Purpose**: Exception stack traces
+- **Usage**: Error handling and debugging information
+
+## Library Usage by Functionality
+
+### Browser Automation
+- **browser-use**: Core automation framework
+- **playwright**: Low-level browser control
+- **MainContentExtractor**: Content extraction
+
+### AI/LLM Integration
+- **langchain_***: Various LLM provider integrations
+- **openai**: Direct OpenAI API access
+- **pydantic**: Data validation for LLM responses
+
+### Web Interface
+- **gradio**: Web UI framework
+- **asyncio**: Async operations for responsive UI
+
+### Workflow Management
+- **langgraph**: Complex workflow orchestration
+- **langchain_core**: Core workflow components
+
+### File Operations
+- **langchain_community.tools**: File management tools
+- **pathlib**: Path operations
+- **json**: Configuration file handling
+
+### System Integration
+- **python-dotenv**: Environment configuration
+- **logging**: Application monitoring
+- **threading**: Concurrent operations
+
+This project demonstrates a sophisticated integration of multiple AI/ML libraries, browser automation tools, and web technologies to create an intelligent web browsing and research automation system.
